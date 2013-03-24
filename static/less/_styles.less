@@ -1,0 +1,68 @@
+// COLORS
+// ---------------------------
+
+
+// TYPOGRAPHY
+// ---------------------------
+	@serif: 'Georgia', 'Times New Roman', Times, sans-serif;
+	@sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	@monospace: 'Monaco', 'Courier New', monospace;
+	@baseFontSize: 16px;
+
+
+// BACKGROUNDS
+// ---------------------------
+
+
+// TEXT COLORS
+// ---------------------------
+
+
+// SECTIONS COLORS
+// ---------------------------
+
+
+// LINKS
+// ---------------------------
+
+
+// BUTTONS
+// ---------------------------
+
+
+// GRIDS
+// ---------------------------
+	@colWidth: 6.5%;
+	@gutWidth: 2%;
+	.grid (@cols){
+		width: @colWidth * @cols + @gutWidth * (@cols - 1);
+	}
+	.grid-margin (@cols, @cols-left){
+		.grid (@cols);
+		margin-left: @colWidth * @cols-left + @gutWidth * (@cols-left)
+	}
+	.grid-block (@cols){
+		.grid (@cols);
+		.inline-block ();
+	}
+
+
+// EXTRA ELEMENTS
+// ---------------------------
+	.inline-block (){
+		display: -moz-inline-stack;
+		display: inline-block;
+		zoom: 1;
+		*display: inline;
+	}
+	.no-style-list (){
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+	}
+
+
+
+
+
+
