@@ -1,0 +1,13 @@
+*.py[cod]
+*.pyc
+
+# C extensions
+*.so
+
+# Packages
+env
+temp
+
+# Others
+.DS_Store
+.webassets-cache

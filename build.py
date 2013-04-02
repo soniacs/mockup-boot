@@ -4,6 +4,7 @@ import sys
 from flask import Flask, render_template
 from flask_flatpages import FlatPages
 from flask_frozen import Freezer
+from flask.ext.assets import Environment, Bundle
 
 DEBUG = True
 FLATPAGES_AUTO_RELOAD = DEBUG
@@ -13,7 +14,15 @@ app = Flask(__name__)
 app.config.from_object(__name__)
 pages = FlatPages(app)
 freezer = Freezer(app)
+assets = Environment(app)
 
+# ASSETS
+less = Bundle('less/main.less', filters='less,yui_css', output='css/main.css')
+js = Bundle('js/main.js', filters='yui_js', output='js/main-min.js')
+assets.register('css', less)
+assets.register('js_all', js)
+
+# ROUTES
 @app.route('/')
 def index():
 	return render_template('index.html', pages=pages)
